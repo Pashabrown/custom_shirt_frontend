@@ -1,6 +1,7 @@
 import {useState} from "react"
 import {Link} from "react-router-dom"
 import {Dropdown} from '../components/Dropdown'
+import {Dropdown2} from '../components/Dropdown2'
 import "../design/Display.css"
 function Index(props){
 //adding a state to our new person creator form
@@ -19,6 +20,8 @@ function Index(props){
   //i want to change the property that has the name of the input 
   //and I want the target to match the value
     const handleChange = (event) => {
+      console.log(event.target.name)
+      console.log(event.target.value)
         setNewForm({ ...newForm, [event.target.name]: event.target.value });
     };
 
@@ -30,7 +33,7 @@ function Index(props){
       //after form updates I want it to go back to a blank form
       //so thats why we set new form
         event.preventDefault();
-        props.createPeople(newForm);
+        props.createShirts(newForm);
         setNewForm({
             tshirtcolor: "",
             upperText: "",
@@ -41,7 +44,7 @@ function Index(props){
         });
     };
 // const imageColor = () => {
-  
+
 
 // }
     // loaded function
@@ -53,34 +56,35 @@ function Index(props){
           <div className="card card-content">
         
         <div key={shirt._id} className="shirt">
-        {/* creating a unique identifier for every person in its map array */}
-            <Link to={`/shirts/${shirt._id}`}>
-          <h1>{shirt.tshirtcolor}</h1>
-            </Link>
+        
+          <h1>T-Shirt Color is {shirt.tshirtcolor}</h1>
         <div className="imgTshirt text-center">
-            {/* {imageColor()} */}
+            
+            <Link to={`/shirts/${shirt._id}`}>
                 <img 
                 className="img-responsive"
                 src={`https://res.cloudinary.com/dkkgmzpqd/image/upload/v1545217305/T-shirt%20Images/${newForm.tshirtcolor}.png`}
                 alt="imgTshirt"/>
+            </Link>
         </div>
         <div className="memeText text-center">
             <div className="upperText">
-                <p>{shirt.upperText}</p>
+                <p style={{fontsize:shirt.textsize, color:shirt.textcolor}}>{shirt.upperText}</p>
             </div>
             <img 
             src={shirt.imgTshirt}
-            // alt="meme-text"
-            // width="370px"
-            // height="370px"
+            alt="meme-text"
+            width="370px"
+            height="370px"
             />
             <div className="lowerText">
-                    <p>{shirt.lowerText}</p>
+                    <p style={{fontsize:shirt.textsize, color:shirt.textcolor}}>{shirt.lowerText}</p>
             </div>
         </div>
         
-        <h3>{shirt.textsize}</h3>
-        <h3>{shirt.textcolor}</h3>
+        <h3>Text Size is {shirt.textsize}</h3>
+          
+        
       </div>
       </div>
       
@@ -114,7 +118,7 @@ function Index(props){
           //the value is connected to the image 
           value={newForm.imgTshirt}
           //the name is the image
-          name="image"
+          name="imgTshirt"
           //so the user knows what to put in that box
           placeholder="image url address link"
 
@@ -135,7 +139,8 @@ function Index(props){
           placeholder="text size"
           onChange={handleChange}
         />
-        <input
+        <form onSubmit={handleSubmit}></form>
+        <Dropdown2
           type="text"
           value={newForm.textcolor}
           name="textcolor"

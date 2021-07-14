@@ -15,6 +15,7 @@ function Main(props){
     }
 
     const createShirts = async (shirt) => {
+      console.log(shirt)
         await fetch(URL, {
             method: "post", 
             headers: {
