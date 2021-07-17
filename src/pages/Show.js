@@ -1,4 +1,5 @@
 import {useState} from "react"
+import {Dropdown2} from '../components/Dropdown2'
 
 function Show(props) {
     //grab the id from the URL
@@ -46,26 +47,30 @@ function Show(props) {
         }
 
     return (
+
+        
       
     <div className="shirt">
+      {/* <h2>{shirt.upperText}</h2>
       <h1>{shirt.tshirtcolor}</h1>
-      <h2>{shirt.upperText}</h2>
       <h2>{shirt.lowerText}</h2>
       <h2>{shirt.textsize}</h2>
-      <h2>{shirt.textcolor}</h2>
+      <h2>{shirt.textcolor}</h2> */}
       
       <img 
       src={shirt.imgTshirt} 
-      alt={shirt.name} />
+      alt={shirt.name} 
+      width="370px"
+      height="370px"/>
+
       <button 
       id="delete" 
       onClick={removeShirt}>Delete</button>
-
         <form onSubmit={handleSubmit}>
             <input 
                 type="text"
                 value={editForm.tshirtcolor}
-                name="name"
+                name="tshirtcolor"
                 placeholder="enter tshirtcolor"
                 onChange={handleChange}
                 
@@ -80,7 +85,7 @@ function Show(props) {
             <input
                 type="text"
                 value={editForm.imgTshirt}
-                name="image"
+                name="imgTshirt"
                 placeholder="image"
                 onChange={handleChange}
             />
@@ -99,13 +104,13 @@ function Show(props) {
                 placeholder="textsize"
                 onChange={handleChange}
             />
-            <input
-                type="text"
-                value={editForm.textcolor}
-                name="textcolor"
-                placeholder="textcolor"
-                onChange={handleChange}
-            />
+            <Dropdown2
+          type="text"
+          value={editForm.textcolor}
+          name="textcolor"
+          placeholder="text color"
+          onChange={handleChange}
+        />
             <input type="submit" value="Update Person"/>
             
         </form>

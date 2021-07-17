@@ -5,11 +5,11 @@ export function Dropdown2 ({ value, onChange, name }) {
         <label>
           Pick your favorite text color:
           <select value={value} onChange={onChange} name={name}>
-            <option value="white">white</option>
-            <option value="black">blue</option>
-            <option value="blue">black</option>
-            <option value="green">green</option>
-            <option value="red">red</option>
+            <option value="white">⬜</option>
+            <option value="black">⬛</option>
+            <option value="blue">🟦</option>
+            <option value="green">🟩</option>
+            <option value="red">🟥</option>
           </select>
         </label>
     )

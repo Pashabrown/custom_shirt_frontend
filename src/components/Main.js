@@ -1,3 +1,4 @@
+
 import {useEffect, useState} from "react"
 import {Route, Switch} from "react-router-dom"
 import Index from "../pages/Index"
@@ -56,7 +57,7 @@ function Main(props){
   
     return (
     <main>
-          <h3 className="text-center">Settings</h3>
+        
       <Switch>
         <Route exact path="/">
           <Index shirts={shirts} createShirts={createShirts} />

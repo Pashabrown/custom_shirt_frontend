@@ -3,12 +3,14 @@ import {Link} from "react-router-dom"
 import {Dropdown} from '../components/Dropdown'
 import {Dropdown2} from '../components/Dropdown2'
 import "../design/Display.css"
+import { Button } from '@material-ui/core';
+
 function Index(props){
 //adding a state to our new person creator form
 //we will update these properties dynamically with
 //our handle change function
     const [newForm, setNewForm] = useState({
-        tshirtcolor: "black",
+        tshirtcolor: "",
         imgTshirt: "",    
         upperText: "",
         lowerText: "",
@@ -82,7 +84,7 @@ function Index(props){
             </div>
         </div>
         
-        <h3>Text Size is {shirt.textsize}</h3>
+      
           
         
       </div>
@@ -147,7 +149,8 @@ function Index(props){
           placeholder="text color"
           onChange={handleChange}
         />
-        <input type="submit" value="Create New Shirt" />
+        {/* <Button color="primary">Hello World</Button>; */}
+        <Button color="primary" type="submit" value="Create New Shirt">Create New shirt</Button> 
       </form>
       {props.shirts ? loaded() : loading()}
     </section>
