@@ -60,7 +60,8 @@ function Main(props){
         
       <Switch>
         <Route exact path="/">
-          <Index shirts={shirts} createShirts={createShirts} />
+          <Index shirts={shirts} createShirts={createShirts}
+          deleteShirts={deleteShirts} />
         </Route>
 
         <Route
