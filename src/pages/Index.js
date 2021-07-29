@@ -149,6 +149,7 @@ function Index(props){
           placeholder="text color"
           onChange={handleChange}
         />
+        
         {/* <Button color="primary">Hello World</Button>; */}
         <Button color="primary" type="submit" value="Create New Shirt">Create New shirt</Button> 
       </form>

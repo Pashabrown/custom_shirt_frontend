@@ -1,5 +1,6 @@
 import {useState} from "react"
 import {Dropdown2} from '../components/Dropdown2'
+import {Dropdown} from '../components/Dropdown'
 
 function Show(props) {
     //grab the id from the URL
@@ -66,8 +67,9 @@ function Show(props) {
       <button 
       id="delete" 
       onClick={removeShirt}>Delete</button>
+        
         <form onSubmit={handleSubmit}>
-            <input 
+            <Dropdown 
                 type="text"
                 value={editForm.tshirtcolor}
                 name="tshirtcolor"
