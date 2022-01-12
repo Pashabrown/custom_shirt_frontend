@@ -7,7 +7,7 @@ import Show from "../pages/Show"
 function Main(props){
     const [shirts, setShirts] = useState([])
     
-    const URL = "https://pashabrown-shirt-api.herokuapp.com/shirts/"
+    const URL = "https://tshirtapi2.herokuapp.com/shirts/"
 
     const getShirts = async () => {
         const response = await fetch(URL)
