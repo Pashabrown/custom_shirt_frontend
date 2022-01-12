@@ -10,7 +10,7 @@ function Index(props){
 //we will update these properties dynamically with
 //our handle change function
     const [newForm, setNewForm] = useState({
-        tshirtcolor: "black",
+        tshirtcolor: "",
         imgTshirt: "",    
         upperText: "",
         lowerText: "",

@@ -1,5 +1,9 @@
 .imgTshirt {
-    position: relative;
+    position: absolute;
+    top:180px;
+    left: 330px;
+    
+    
 }
 
 .memeText {
